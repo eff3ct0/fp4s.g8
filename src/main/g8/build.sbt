@@ -17,14 +17,15 @@ lazy val root = (project in file("."))
         circe.genericExtras,
         http4s.circe,
         http4s.dsl,
+        http4s.emberServer,
         http4s.emberClient,
         logback.logbackClassic,
         /** Test */
-        Testing.scalaTest,
-        Testing.scalaTestFlatspec,
+        // Testing.scalaTest,
+        // Testing.scalaTestFlatspec,
         Testing.munit,
         Testing.munitCatsEffect,
-        Testing.scalaCheck
+        // Testing.scalaCheck
       )
   )
 $else$
@@ -51,14 +52,15 @@ lazy val m1 =
           circe.genericExtras,
           http4s.circe,
           http4s.dsl,
+          http4s.emberServer,
           http4s.emberClient,
           logback.logbackClassic,
           /** Test */
-          Testing.scalaTest,
-          Testing.scalaTestFlatspec,
+          // Testing.scalaTest,
+          // Testing.scalaTestFlatspec,
           Testing.munit,
           Testing.munitCatsEffect,
-          Testing.scalaCheck
+          // Testing.scalaCheck
         ),
         publish / skip := false
     )
