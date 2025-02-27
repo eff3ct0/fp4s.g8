@@ -26,7 +26,7 @@ object BuildPlugin extends AutoPlugin {
     Test / fork              := true,
     Test / parallelExecution := true,
     Test / scalacOptions     := Seq("-Ymacro-annotations"),
-    scalafmtOnCompile        := true,
+    // scalafmtOnCompile        := true,
     updateOptions := updateOptions.value
       .withCachedResolution(cachedResolution = false),
     // do not build and publish scaladocs

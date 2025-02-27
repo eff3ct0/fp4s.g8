@@ -15,7 +15,6 @@ lazy val root = (project in file("."))
         circe.generic,
         circe.parser,
         circe.genericExtras,
-        jwt.circe,
         http4s.circe,
         http4s.dsl,
         http4s.emberClient,
@@ -33,16 +32,16 @@ lazy val root =
     (project in file("."))
       .disablePlugins(BuildPlugin, AssemblyPlugin, HeaderPlugin)
       .settings(
-          name           := $name;format="normalize"$ ,
-publish / skip := true
-)
+          name           := "$name;format="normalize"$" ,
+          publish / skip := true
+  )
 
 lazy val m1 =
     (project in file("./m1"))
       .withKindProjector
       .withBetterMonadicFor
       .settings(
-        name := $name;format="normalize"$ + "-m1",
+        name := "$name;format="normalize"$" + "-m1",
         libraryDependencies ++=
         Seq(
           catsEffect.core,
@@ -50,7 +49,6 @@ lazy val m1 =
           circe.generic,
           circe.parser,
           circe.genericExtras,
-          jwt.circe,
           http4s.circe,
           http4s.dsl,
           http4s.emberClient,

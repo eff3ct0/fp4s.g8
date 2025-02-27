@@ -32,10 +32,10 @@ object Dependency {
     lazy val scalaTestFlatspec: ModuleID =
       "org.scalatest" %% "scalatest-flatspec" % Version.ScalaTest % Test
 
-    lazy val munit: ModuleID = "org.scalameta" %% "munit" % MunitVersion % Test
+    lazy val munit: ModuleID = "org.scalameta" %% "munit" % Version.MunitVersion % Test
 
     lazy val munitCatsEffect: ModuleID =
-      "org.typelevel" %% "munit-cats-effect" % MunitCatsEffectVersion % Test
+      "org.typelevel" %% "munit-cats-effect" % Version.MunitCatsEffectVersion % Test
 
   }
 

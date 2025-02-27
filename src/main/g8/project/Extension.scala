@@ -1,8 +1,10 @@
 import de.heikoseeberger.sbtheader.HeaderPlugin
 import sbt.Keys._
 import sbt._
+$if(scoverageEnabled.truthy) $
 import scoverage.ScoverageKeys._
 import scoverage.ScoverageSbtPlugin
+$endif$
 
 object Extension {
 
@@ -36,14 +38,14 @@ object Extension {
           SonatypePublish.projectSettings
         )
     $if(scoverageEnabled.truthy) $
-      def withCoverage: Project =
-        project
-          .enablePlugins(ScoverageSbtPlugin)
-          .settings(
-            coverageEnabled := true,
-            coverageFailOnMinimum := false,
-            coverageMinimumStmtTotal := 30 // TODO. provisional
-          )
+    def withCoverage: Project =
+      project
+        .enablePlugins(ScoverageSbtPlugin)
+        .settings(
+          coverageEnabled          := true,
+          coverageFailOnMinimum    := false,
+          coverageMinimumStmtTotal := 30 // TODO. provisional
+        )
     $endif$
 
   }
