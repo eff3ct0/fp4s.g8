@@ -1,4 +1,4 @@
-# FP4S (g8)
+# FP4S - Functional Programming for Scala (g8)
 
 A [Giter8](https://www.foundweekends.org/giter8) template for Scala Functional Programming Projects.
 
