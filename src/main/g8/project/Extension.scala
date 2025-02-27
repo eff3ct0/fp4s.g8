@@ -35,15 +35,16 @@ object Extension {
           publish / skip := false,
           SonatypePublish.projectSettings
         )
-
-    def withCoverage: Project =
-      project
-        .enablePlugins(ScoverageSbtPlugin)
-        .settings(
-          coverageEnabled          := true,
-          coverageFailOnMinimum    := false,
-          coverageMinimumStmtTotal := 30 // TODO. provisional
-        )
+    $if(scoverageEnabled.truthy) $
+      def withCoverage: Project =
+        project
+          .enablePlugins(ScoverageSbtPlugin)
+          .settings(
+            coverageEnabled := true,
+            coverageFailOnMinimum := false,
+            coverageMinimumStmtTotal := 30 // TODO. provisional
+          )
+    $endif$
 
   }
 
